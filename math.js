@@ -47,7 +47,7 @@ function Factorial(n) {
 
 // Hence Big-O for the above program is O(n)
 
-// -------------------------------------------------------------- b) Prime Number
+// -------------------------------------------------------------- c) Prime Number
 
 // Note: A prime number is a natural number greater than 1, which is only divisible by 1 and itself.
 
@@ -66,12 +66,43 @@ function isPrimeNumber(n) {
 
 // Testing
 
-console.log(isPrimeNumber(1));
-console.log(isPrimeNumber(5));
-console.log(isPrimeNumber(4));
+// console.log(isPrimeNumber(1));
+// console.log(isPrimeNumber(5));
+// console.log(isPrimeNumber(4));
 
 // Big-O Calculation
 
 // 1. one loop = O(n)
 
 // Hence Big-O for the above program is O(n)
+
+// -------------------------------------------------------------- d) Power of two
+
+// Note: Determine if the given positive number is a power of 2.
+
+function isPowerOfTwo(n) {
+  if (n < 1) {
+    return false;
+  } else {
+    while (n > 1) {
+      if (n % 2 !== 0) {
+        return false;
+      }
+      n = n / 2;
+    }
+    return true;
+  }
+}
+
+// Testing
+
+console.log(isPowerOfTwo(1));
+console.log(isPowerOfTwo(2));
+console.log(isPowerOfTwo(5));
+
+// Big-O Calculation
+
+// 1. one loop = O(n)
+// 2. input size reduced by half = O(logn)
+
+// Hence Big-O for the above program is O(logn)
