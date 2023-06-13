@@ -17,10 +17,27 @@ function recursiveFibonacci(n) {
 
 // Testing
 
-console.log(recursiveFibonacci(0)); // 0
-console.log(recursiveFibonacci(1)); // 1
-console.log(recursiveFibonacci(6)); // 8
+// console.log(recursiveFibonacci(0)); // 0
+// console.log(recursiveFibonacci(1)); // 1
+// console.log(recursiveFibonacci(6)); // 8
 
 // Big-O Calculation
 
 // Big-O for the above program is O(2^n)
+
+// Factorial Problem
+
+function recursiveFactorial(n) {
+  if (n === 0) {
+    return 1;
+  }
+  return n * recursiveFactorial(n - 1);
+}
+
+// Testing
+
+console.log(recursiveFactorial(5));
+
+// Big-O Calculation
+
+// Big-O for the above program is O(n)
