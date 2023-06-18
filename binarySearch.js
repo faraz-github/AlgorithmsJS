@@ -34,13 +34,47 @@ function binarySearch(arr, target) {
 
 // Testing
 
-const arr = [-5, 2, 4, 6, 10];
+// const arr = [-5, 2, 4, 6, 10];
 
-console.log(binarySearch(arr, 10)); // 4
-console.log(binarySearch(arr, 6)); // 3
-console.log(binarySearch(arr, 20)); // -1
+// console.log(binarySearch(arr, 10)); // 4
+// console.log(binarySearch(arr, 6)); // 3
+// console.log(binarySearch(arr, 20)); // -1
 
 // Big-O Calculation
 // 1. one loop = O(n)
 // 2. input is reduced in half so = O(logn)
+// Hence Big-O for the above program is O(logn)
+
+// Binary search using recursion technique
+
+function search(arr, target, leftIndex, rightIndex) {
+  if (leftIndex > rightIndex) {
+    return -1;
+  }
+
+  let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+  if (target === arr[middleIndex]) {
+    return middleIndex;
+  }
+
+  if (target < arr[middleIndex]) {
+    return search(arr, target, leftIndex, middleIndex - 1); // Left half of array
+  } else {
+    return search(arr, target, middleIndex + 1, rightIndex); // Right half of array
+  }
+}
+
+function recursiveBinarySearch(arr, target) {
+  return search(arr, target, 0, arr.length - 1);
+}
+
+// Testing
+
+const arr = [-5, 2, 4, 6, 10];
+
+console.log(recursiveBinarySearch(arr, 10)); // 4
+console.log(recursiveBinarySearch(arr, 6)); // 3
+console.log(recursiveBinarySearch(arr, 20)); // -1
+
+// Big-O Calculation
 // Hence Big-O for the above program is O(logn)
