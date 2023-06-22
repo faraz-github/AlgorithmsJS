@@ -1,5 +1,5 @@
 // What is quick sort?
-// In insertion sort we identify a pivot element once we have identified it we traverse the array and move any element
+// In quick sort we identify a pivot element once we have identified it we traverse the array and move any element
 // that is less than the pivot element to the left side and greater element to the right side. note that these are all seperated
 // so once everything comes is order concatenate left , pivot and right array respectively.
 
