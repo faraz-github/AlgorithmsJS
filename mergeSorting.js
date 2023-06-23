@@ -16,3 +16,29 @@ function mergeSort(arr) {
 
   return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
+
+function merge(leftArr, rightArr) {
+  const sortedArr = [];
+
+  while (leftArr.length && rightArr.length) {
+    if (leftArr[0] <= rightArr[0]) {
+      sortedArr.push(leftArr.shift());
+    } else {
+      sortedArr.push(rightArr.shift());
+    }
+  }
+
+  return [...sortedArr, ...leftArr, ...rightArr];
+}
+
+// Testing
+
+const arr = [-6, 20, 8, -2, 4];
+
+console.log(mergeSort(arr)); // [-6, -2, 4, 8, 20]
+
+// Big-O Calculation
+// 1. input is divided in half = O(logn)
+// 2. one loop is there = O(n)
+
+// Hence Big-O for the above program is O(nlogn)
